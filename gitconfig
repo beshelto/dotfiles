@@ -1,0 +1,30 @@
+[user]
+	name = Ben Shelton
+	email = ben.shelton@ni.com
+[core]
+	editor = vim
+	excludesfile = /home/bshelton/.gitignore_global
+[merge]
+	tool = p4merge
+[mergetool "mymeld"]
+	cmd = meld "$LOCAL" "$MERGED" "$REMOTE"
+[mergetool "p4merge"]
+	cmd = /usr/local/bin/p4merge \
+		"$PWD/$BASE" \
+		"$PWD/$LOCAL" \
+		"$PWD/$REMOTE" \
+		"$PWD/$MERGED" 
+	keepBackup = false
+	trustExitCode = false
+[sendemail]
+	smtpserver = mailout.natinst.com
+	smtpserverport = 25
+	smtpencryption = none
+
+[alias]
+	cp = cherry-pick
+	rb = rebase
+	d = diff
+	ds = diff --staged
+	st = status
+	co = checkout
